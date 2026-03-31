@@ -36,23 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 
-
-# application.yml --- IGNORE ---
-application.yml
-!**/src/main/**/application.yml
-!**/src/test/**/application.yml
-
-# build.gradle --- IGNORE ---
-build.gradle
-!**/src/main/**/build.gradle
-!**/src/test/**/build.gradle
-
-# gradle.properties --- IGNORE ---
-gradle.properties
-!**/src/main/**/gradle.properties
-!**/src/test/**/gradle.properties
-
-# gradlew --- IGNORE ---
-gradlew
-!**/src/main/**/gradlew
-!**/src/test/**/gradlew 
+### Custom ###
+**/src/main/resources/application.yml
+**/src/main/resources/application-*.yml
