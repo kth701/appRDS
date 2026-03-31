@@ -1,0 +1,38 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: apprds
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    # AWS RDS MariaDB 연결 설정 (엔드포인트 주소 사용)
+    url: jdbc:mariadb://mariadb-server2.c9ww422skzqd.ap-northeast-2.rds.amazonaws.com:3306/webdb?serverTimezone=Asia/Seoul&sslMode=trust
+    username: webuser
+    password: webuser
+    hikari:
+      # 프로젝트 재시작 시 HikariCP가 유지할 최소 유휴 커넥션 수
+      minimum-idle: 5
+      # 커넥션 풀의 최대 크기
+      maximum-pool-size: 2
+
+  jpa:
+    # 엔티티 변경 시 데이터베이스 테이블 구조를 자동으로 업데이트
+    hibernate:
+      ddl-auto: update
+    # 실행되는 SQL 쿼리를 콘솔에 출력
+    show-sql: true
+    properties:
+      hibernate:
+        # 출력되는 SQL을 보기 좋게 포맷팅
+        format_sql: true
+        # dialect: org.hibernate.dialect.MariaDBDialect
+
+logging:
+  level:
+    org.springframework.web: info
+    com.example: debug
+    org.springframework.security: debug
+
+
